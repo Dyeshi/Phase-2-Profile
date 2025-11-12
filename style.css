@@ -343,3 +343,108 @@ nav a:hover {
     width: 90%;
   }
 }
+
+/* ===== MENU & DARK MODE TOGGLES ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-toggle,
+.dark-toggle {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-toggle:hover,
+.dark-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide menu toggle on desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: max-height 0.4s ease;
+}
+
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    overflow: hidden;
+    max-height: 0;
+    flex-direction: column;
+  }
+
+  #navbar.open {
+    max-height: 300px;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* ===== LIGHT MODE ===== */
+body.light-mode {
+  background-color: #fdfdfd;
+  color: #111;
+}
+
+body.light-mode nav a {
+  color: #111;
+}
+
+body.light-mode nav a:hover {
+  color: #ff4b82;
+}
+
+body.light-mode .hire-btn {
+  background-color: #7f3ef2;
+  color: #fff;
+}
+
+body.light-mode .connect,
+body.light-mode .toolbox,
+body.light-mode .graphic-design,
+body.light-mode .web-dev,
+body.light-mode .animations {
+  background-color: #f7f7f7;
+  color: #111;
+}
+
+body.light-mode .tool-card p {
+  color: #333;
+}

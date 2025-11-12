@@ -11,34 +11,42 @@
 
   <!-- ===== HEADER ===== -->
   <header class="hero">
+  <div class="top-bar">
     <div class="logo">
       <img src="logo.png" alt="Yeshi Logo">
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#experience">EXPERIENCE</a></li>
-        <li><a href="#toolbox">TOOL BOX</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
 
-    <div class="intro" id="home">
-      <div class="profile-pic">
-        <img src="yeshi pp.png" alt="Yeshi">
-      </div>
-      <div class="intro-text">
-        <h2>Hi, it’s <span class="highlight">Yeshi</span></h2>
-        <h3>I’m a <span class="highlight2">WEB Developer</span></h3>
-        <p>
-          I can help you write code to create the structure, design, and functionality of websites.
-          Use programming languages like HTML, Python, and JavaScript.
-          Develop interactive features like forms, sliders, animations, and more. Can even make short 2D animation.
-        </p>
-        <button class="hire-btn">Hire Me</button>
-      </div>
+    <div class="nav-controls">
+      <button id="darkToggle" class="dark-toggle">🌙</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
-  </header>
+  </div>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#experience">EXPERIENCE</a></li>
+      <li><a href="#toolbox">TOOL BOX</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <div class="intro" id="home">
+    <div class="profile-pic">
+      <img src="yeshi pp.png" alt="Yeshi">
+    </div>
+    <div class="intro-text">
+      <h2>Hi, it’s <span class="highlight">Yeshi</span></h2>
+      <h3>I’m a <span class="highlight2">WEB Developer</span></h3>
+      <p>
+        I can help you write code to create the structure, design, and functionality of websites.
+        Use programming languages like HTML, Python, and JavaScript.
+        Develop interactive features like forms, sliders, animations, and more. Can even make short 2D animation.
+      </p>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+  </div>
+</header>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="connect">
@@ -126,6 +134,22 @@
       Let’s build something extraordinary together!
     </p>
   </section>
+
+  <script>
+  // Menu Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navbar = document.getElementById('navbar');
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('open');
+  });
+
+  // Dark Mode Toggle
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    darkToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+  });
+</script>
 
 </body>
 </html>
